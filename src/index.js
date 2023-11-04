@@ -833,7 +833,7 @@ class MiniCssExtractPlugin {
                       : '',
                     typeof this.runtimeOptions.insert !== 'undefined'
                       ? typeof this.runtimeOptions.insert === 'function'
-                        ? `(${this.runtimeOptions.insert.toString()})(linkTag)`
+                        ? `(${this.runtimeOptions.insert.toString()})(linkTag, chunkId)`
                         : Template.asString([
                             `var target = document.querySelector("${this.runtimeOptions.insert}");`,
                             `target.parentNode.insertBefore(linkTag, target.nextSibling);`,
@@ -966,7 +966,7 @@ class MiniCssExtractPlugin {
                     : '',
                   typeof this.runtimeOptions.insert !== 'undefined'
                     ? typeof this.runtimeOptions.insert === 'function'
-                      ? `(${this.runtimeOptions.insert.toString()})(linkTag)`
+                      ? `(${this.runtimeOptions.insert.toString()})(linkTag, chunkId)`
                       : Template.asString([
                           `var target = document.querySelector("${this.runtimeOptions.insert}");`,
                           `target.parentNode.insertBefore(linkTag, target.nextSibling);`,
